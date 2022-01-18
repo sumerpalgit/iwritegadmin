@@ -2,6 +2,7 @@ FROM composer:2.2.4 as build
 WORKDIR /app
 COPY . /app
 #RUN composer global require hirak/prestissimo && composer install
+RUN composer install
 
 FROM php:7.3-apache-stretch
 RUN docker-php-ext-install pdo pdo_mysql
